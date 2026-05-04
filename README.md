@@ -26,14 +26,25 @@ Has income kept up with the rising cost of living in the United States?
 - SQL
 - GitHub
 
-## Planned Data Sources
+## Data Sources
 
-- Consumer Price Index data
-- Gas price data
-- Wage or earnings data
-- Purchasing power / inflation adjustment data
+This project uses public economic datasets from FRED:
 
-## Planned Dashboard Pages
+- Consumer Price Index for All Urban Consumers: All Items in U.S. City Average
+- U.S. Regular All Formulations Gas Price
+- Average Hourly Earnings of Production and Nonsupervisory Employees, Total Private
+  
+## Data Pipeline
+
+This project follows a simple data pipeline:
+
+1. Raw public datasets were downloaded from FRED and stored in `data/raw/`.
+2. Python was used to clean, standardize, and merge the datasets in `notebooks/data_cleaning.ipynb`.
+3. Weekly gas price data was converted into monthly averages to match CPI and wage data.
+4. Year-over-year percent changes and inflation-adjusted wage metrics were calculated.
+5. Cleaned datasets were exported to `data/cleaned/`.
+6. The analysis-ready dataset will be used to build the Power BI dashboard.
+## Dashboard Pages
 
 1. Executive Summary
 2. Gas Prices Over Time
@@ -51,3 +62,16 @@ cost-of-living-analysis-2026/
 ├── powerbi/       # Power BI dashboard file
 ├── README.md      # Project overview
 └── project_notes.md
+```
+## Current Status
+
+Data collection and cleaning are complete. The project now includes raw datasets, a Python cleaning notebook, and cleaned CSV files ready for Power BI dashboard development.
+
+## Key Findings
+
+_To be completed after dashboard analysis._
+
+## Dashboard Preview
+
+_To be added after dashboard creation._
+
