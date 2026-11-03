@@ -8,7 +8,7 @@
 
 This project brings together three public U.S. economic series to examine inflation, wages, and fuel prices over time. Its purpose is to distinguish **nominal wage growth** from **purchasing power**, examine fuel-price volatility, and communicate what the data can and cannot establish.
 
-> **Status:** The data-cleaning notebook, analysis-ready CSVs, and author-supplied final [Power BI dashboard](powerbi/cost_of_living_dashboard.pbix) are included. Screenshots and verified numerical findings remain pending. The PBIX upload was checked for byte integrity; its internal model, measures, visuals, and refresh behavior have not been inspected or validated.
+> **Status:** The data-cleaning notebook, analysis-ready CSVs, and author-supplied final [Power BI dashboard](powerbi/cost_of_living_dashboard.pbix) are included. Four original page screenshots and a four-page PDF export are now included below. Verified numerical findings remain pending. File integrity checks do not validate the Power BI model, DAX measures, analytical conclusions, or refresh behavior; those remain to be reviewed.
 
 ## Power BI dashboard
 
@@ -16,6 +16,34 @@ This project brings together three public U.S. economic series to examine inflat
 - [Opening instructions and verification details](powerbi/README.md)
 
 Download the PBIX and open it in Power BI Desktop. This is a downloadable report file; no hosted interactive report link is provided. To refresh, you may need to update local data-source paths or credentials. Refresh success and correspondence with the repository CSVs have not been verified.
+
+## Dashboard previews
+
+The original PNG screenshots are preserved at their supplied resolution without resizing or recompression. These are static views of the report's saved filter state.
+
+[View or download the four-page dashboard PDF](exports/cost_of_living_dashboard.pdf)
+
+### Page 1: Executive overview
+
+![Executive overview of CPI, wages, and gasoline prices](screenshots/executive_overview.png)
+
+### Page 2: Wage comparison
+
+![Wage comparison, inflation, and real wage gap](screenshots/wage_comparison.png)
+
+### Page 3: Gas prices vs. inflation
+
+![Gas prices versus inflation and CPI](screenshots/gas_prices_vs_inflation.png)
+
+### Page 4: Purchasing power
+
+![Purchasing power and real wage index; original page titled Wage](screenshots/purchasing_power.png)
+
+### Items for future dashboard review
+
+- **Page 4 forecast:** The chart extends beyond 2026 toward 2040. Clearly distinguish projections from observed data and document the last observed date, forecast method, assumptions, horizon, and uncertainty interval. The forecast has not been validated.
+- **Page 3 aggregation:** Investigate the `Sum of cpi` and `Sum of gas_price` labels and underlying measures. Confirm the time grain and aggregation; adding index levels or prices across periods can mislead. Use explicit units and labels matching the verified calculations.
+- **Readability and interpretation:** Improve text contrast, shorten dense summaries, avoid clipped or scrolling text in static exports, and add date ranges to the wage-duration bars. Verify the executive overview's `Real Wage Index` label against its measure and distinguish latest values from period averages.
 
 ## Questions explored
 
@@ -80,7 +108,13 @@ The exact real wage growth rate is `((1 + nominal_wage_growth) / (1 + CPI_inflat
 ├── powerbi/
 │   ├── cost_of_living_dashboard.pbix
 │   └── README.md
+├── screenshots/
+│   ├── executive_overview.png
+│   ├── wage_comparison.png
+│   ├── gas_prices_vs_inflation.png
+│   └── purchasing_power.png
 └── exports/
+    ├── cost_of_living_dashboard.pdf
     └── README.md
 ```
 
@@ -111,7 +145,8 @@ To execute the notebook locally, install Python, Jupyter, and pandas; start Jupy
 - [ ] Resolve the cleaned full-dataset filename discrepancy.
 - [x] Publish the author-supplied final Power BI file.
 - [ ] Inspect and validate the Power BI model, measures, visuals, and refresh behavior.
-- [ ] Publish legible page screenshots.
+- [x] Publish original page screenshots and the four-page PDF export.
+- [ ] Address screenshot readability, chart aggregation labels, and forecast documentation.
 - [ ] Document DAX measures and the dashboard data model.
 - [ ] Add **verified numeric findings**, time frames, and actionable interpretations.
 - [ ] Include data-refresh date and a reproducible environment/requirements file.

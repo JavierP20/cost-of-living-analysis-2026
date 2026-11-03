@@ -10,7 +10,7 @@ This is the author's final supplied Power BI file, preserved without modificatio
 2. Open the downloaded file in Power BI Desktop.
 3. If you want to refresh the data, inspect the data-source settings and adjust any local file paths or required credentials for your environment.
 
-The repository's [cleaned datasets](../data/cleaned/) and [Python notebook](../notebooks/data_cleaning.ipynb) are available separately. Their correspondence with the embedded report data has not been verified. No hosted interactive report URL or screenshot exports are included.
+The repository's [cleaned datasets](../data/cleaned/) and [Python notebook](../notebooks/data_cleaning.ipynb) are available separately. Their correspondence with the embedded report data has not been verified. Static [page screenshots](../README.md#dashboard-previews) and a [four-page PDF export](../exports/cost_of_living_dashboard.pdf) are included. No hosted interactive report URL is provided.
 
 ## Upload verification
 
