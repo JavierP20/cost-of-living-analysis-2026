@@ -1,31 +1,26 @@
-# Notebooks Folder
+# Data Cleaning Notebook
 
-This folder stores Python notebooks used for data cleaning, exploration, and analysis.
+The repository includes [data_cleaning.ipynb](data_cleaning.ipynb), a pandas notebook used to prepare CPI, gasoline prices, and hourly wage data for economic analysis.
 
-## Planned Notebook
+## Implemented steps
 
-- `data_cleaning.ipynb`
+1. Read the three source CSVs from `../data/raw/`.
+2. Rename fields and parse dates/numeric values.
+3. Average weekly gasoline prices into monthly observations.
+4. Join CPI, monthly gasoline prices, and average hourly wages on date.
+5. Produce an analysis subset with complete observations.
+6. Calculate 12-observation changes and a CPI-adjusted hourly wage index.
+7. Export analysis CSVs to `../data/cleaned/`.
 
-## Purpose
+## Running it
 
-The notebook will be used to:
+Install `pandas` and Jupyter, start Jupyter **from this folder**, and run notebook cells in order. The notebook uses relative paths based on `Path("..")`; running it from another working directory may fail.
 
-- Import raw datasets
-- Check column names and data types
-- Handle missing values
-- Standardize date fields
-- Merge datasets when needed
-- Create cleaned datasets for Power BI
-- Export final cleaned CSV files to `data/cleaned/`
+## Known issues to validate
 
-## Planned Workflow
+- The notebook exports the full merged dataset as `cost_of_living_monthly_full.csv`, while the currently committed cleaned file is `cost_of_living_monthly_fully.csv`. Standardize the name and regenerate the file.
+- The 12-row percentage changes are computed after filtering incomplete observations. Confirm uninterrupted monthly frequency before describing the results as year-over-year rates.
+- Check gasoline resampling date conventions and source units/seasonal adjustments.
+- Add reproducible dependency versions, data validation checks, and a clear execution date before claiming fully repeatable results.
 
-1. Load raw data from `data/raw/`
-2. Inspect rows, columns, missing values, and data types
-3. Clean and standardize each dataset
-4. Create calculated fields if needed
-5. Export cleaned files to `data/cleaned/`
-
-## Notes
-
-The notebook should clearly explain each cleaning step so another person can understand the process.
+The notebook is **implemented**, not merely planned; the dashboard and final quantitative conclusions are tracked separately in the [main README](../README.md).
