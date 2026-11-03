@@ -1,6 +1,6 @@
 # U.S. Cost of Living Analysis | CPI, Wages & Gas Prices
 
-**Data analysis portfolio project** | Python (pandas) · Time-series analysis · Power BI (dashboard work in progress)
+**Data analysis portfolio project** | Python (pandas) · Time-series analysis · Power BI
 
 ## The business question
 
@@ -8,7 +8,14 @@
 
 This project brings together three public U.S. economic series to examine inflation, wages, and fuel prices over time. Its purpose is to distinguish **nominal wage growth** from **purchasing power**, examine fuel-price volatility, and communicate what the data can and cannot establish.
 
-> **Status:** The data-cleaning notebook and analysis-ready CSVs are published. The Power BI report, screenshots, and final evidence-based findings are **not yet included in this repository**. They will be added after validation. This README intentionally does not present unfinished work as complete.
+> **Status:** The data-cleaning notebook, analysis-ready CSVs, and author-supplied final [Power BI dashboard](powerbi/cost_of_living_dashboard.pbix) are included. Screenshots and verified numerical findings remain pending. The PBIX upload was checked for byte integrity; its internal model, measures, visuals, and refresh behavior have not been inspected or validated.
+
+## Power BI dashboard
+
+- [Download the Power BI file](powerbi/cost_of_living_dashboard.pbix?raw=true)
+- [Opening instructions and verification details](powerbi/README.md)
+
+Download the PBIX and open it in Power BI Desktop. This is a downloadable report file; no hosted interactive report link is provided. To refresh, you may need to update local data-source paths or credentials. Refresh success and correspondence with the repository CSVs have not been verified.
 
 ## Questions explored
 
@@ -70,6 +77,9 @@ The exact real wage growth rate is `((1 + nominal_wage_growth) / (1 + CPI_inflat
 ├── notebooks/
 │   ├── data_cleaning.ipynb
 │   └── README.md
+├── powerbi/
+│   ├── cost_of_living_dashboard.pbix
+│   └── README.md
 └── exports/
     └── README.md
 ```
@@ -99,7 +109,9 @@ To execute the notebook locally, install Python, Jupyter, and pandas; start Jupy
 
 - [ ] Validate complete monthly coverage and the 12-month change calculations.
 - [ ] Resolve the cleaned full-dataset filename discrepancy.
-- [ ] Publish the final Power BI file and legible page screenshots.
+- [x] Publish the author-supplied final Power BI file.
+- [ ] Inspect and validate the Power BI model, measures, visuals, and refresh behavior.
+- [ ] Publish legible page screenshots.
 - [ ] Document DAX measures and the dashboard data model.
 - [ ] Add **verified numeric findings**, time frames, and actionable interpretations.
 - [ ] Include data-refresh date and a reproducible environment/requirements file.
