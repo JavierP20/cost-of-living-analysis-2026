@@ -1,17 +1,14 @@
-# exports Folder
+# Dashboard exports
 
-This folder stores exports used in the Cost of Living Analysis 2026 project.
+[View or download the four-page dashboard PDF](cost_of_living_dashboard.pdf)
 
-## Structure
+The author-supplied PDF is preserved byte-for-byte. Page order:
 
-```text
-/
-│
-├── dashboard_screenshots/       # Screenshots of PowerBI Dashboard
-└── cost_of_living_dashboard.pdf/   # PDF version of the PowerBI Dashbaord
-```
-## Planned Files
+1. Executive overview
+2. Wage comparison
+3. Gas prices vs. inflation
+4. Purchasing power (original page title: Wage)
 
-- Power BI dashboard PDF export
-- Dashboard screenshots
-- Final visuals used in the README
+Original PNGs are in [screenshots/](../screenshots/) and embedded in the [project README](../README.md#dashboard-previews). These exports are static; use the [Power BI report](../powerbi/cost_of_living_dashboard.pbix) for interaction.
+
+See the project README for outstanding forecast, aggregation, and readability review items. Publishing the exports does not validate the underlying calculations.
